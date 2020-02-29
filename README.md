@@ -29,7 +29,6 @@ Our package only allows the input image to be a 3D numpy array and output the ma
   - A function that performs vertical seam carve for image shrinking. This function take image input in the form of a matrix.
 
 
-
 ## Installation
 
 You can install the development version from
@@ -42,7 +41,8 @@ devtools::install_github("UBC-MDS/Rgroup12")
 
 ## Related Packages
 
-  There are a few existing Python packages that perform content-aware image resizing, such as `pyCAIR` (available on PyPI https://pypi.org/project/pyCAIR/), and `seam-carver` (https://pypi.org/project/seam-carver/). Currently, there is no package available on CRAN to resize images based on the same mechanism, however, there is a package available on Github to seam carve image (https://github.com/vgorte/SC-Package-R). These packages use the seam carving process to increase or decrease the size of the image by finding the seam with the lowest energy values from the energy map. Our implementation of image resizing is a less sophisticated version of seam carving, which focuses on downsizing images by removing low-energy vertical seams.
+  There are a few existing R packages that perform image manipulation such as [magick](), which could be used for simplifying high-quantity images. Currently, there is no package available on CRAN to resize images based on the same mechanism, however, there is a package available on Github to [seam carve image](https://github.com/vgorte/SC-Package-R). These packages use the seam carving process to increase or decrease the size of the image by finding the seam with the lowest energy values from the energy map. Our implementation of image resizing is a less sophisticated version of seam carving, which focuses on downsizing images by removing low-energy vertical seams. 
+  
 
 
 
