@@ -1,14 +1,20 @@
 Package: group12R
 Title: Image processing
 Version: 0.0.0.9000
-Authors@R: c(
-    person(given = "Frank",
+Authors@R: 
+   c(person(given = "Frank",
            family = "Lu",
            role = c("aut", "cre"),
            email = "franklu@live.ca",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-    person("Rita","Ni",role = "aut",email = "niruidan@gmail.com"),
-    person("Margaret","Zhao",role = "aut",email = "margaretz@gmail.com"))
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+    person(given = "Rita",
+           family = "Ni",
+           role = c("aut"),
+           email = "niruidan@gmail.com"),
+    person(given = "Margaret",
+           family = "Zhao",
+           role = c("aut"),
+           email = "margaretzhao@yahoo.com"))
 Description: The package can compresses, sharpen, or shrink images.
     The compress function can reduces the byte size of image, 
     the shrink function reduce image size by removing low energy pixels, 
