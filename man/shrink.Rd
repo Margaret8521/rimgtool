@@ -2,20 +2,22 @@
 % Please edit documentation in R/shrink.R
 \name{shrink}
 \alias{shrink}
-\title{Return a shrinked image}
+\title{Return a shrinked image of desired size}
 \usage{
 shrink(img, n)
 }
 \arguments{
-\item{img}{array}
+\item{img}{input image as a array}
 
-\item{n}{integer}
+\item{width}{integer desired width for new image}
+
+\item{height}{integer desired height for new image}
 }
 \value{
-array
+array for shrinked image
 }
 \description{
-Return a shrinked image
+Return a shrinked image of desired size
 }
 \examples{
 old_img <- array(1:24, dim = c(3, 4, 2))
