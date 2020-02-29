@@ -7,12 +7,12 @@
 compress(img, n)
 }
 \arguments{
-\item{img}{array}
+\item{img}{array, the image to be processed}
 
-\item{n}{integer}
+\item{n}{integer, the desired number of bits}
 }
 \value{
-array
+array, returns the compressed image
 }
 \description{
 Return a compressed image
