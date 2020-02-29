@@ -1,13 +1,34 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# group12R
+# Rgroup12
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The goal of group12R is to perform image processing in R.
+The goal of Rgroup12 is to perform image processing in R.
+
+## Package Overview
+
+`Rgroup12` is a R package that is intended to allow users to compress, sharpen and shrink an input image. 
+Our package only allows the input image to be a 3D numpy array and output the manipulated image as a 3D numpy array. It contains three functions: `compress()`, `sharpen()`, and `shrink()`. 
+
+
+## Feature Description
+
+- `compress`:
+  - This function quantizes an image by restricting each pixel to only take on one of the desired colour values
+  and return a version of the image (the same size as the original) where each pixel's original colour is replaced with the nearest prototype colour.
+  
+
+- `sharpen`:
+  - This function enhances the edges in the image and returns a sharper-looking image.  At this moment, this function is restricted to gray-scale images only 
+  
+- `shrink`:
+  - A function that performs vertical seam carve for image shrinking. This function take image input in the form of a matrix.
+
+
 
 ## Installation
 
@@ -18,13 +39,12 @@ You can install the development version from
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/Rgroup12")
 ```
-## Features
-- `sharpen`:
-  - This function enhances the edges in the image and returns a sharper-looking image.  At this moment, this function is restricted to gray-scale images only 
-  
-- `shrink`:
-  - A function that performs vertical seam carve for image shrinking. This function take image input as array and return the shrinked image array.
-  - There are a few existing Python packages that perform content-aware image resizing, such as `pyCAIR` (available on PyPI https://pypi.org/project/pyCAIR/), and `seam-carver` (https://pypi.org/project/seam-carver/). Currently, there is no package available on CRAN to resize images based on the same mechanism, however, there is a package available on Github to seam carve image (https://github.com/vgorte/SC-Package-R). These packages use the seam carving process to increase or decrease the size of the image by finding the seam with the lowest energy values from the energy map. Our implementation of image resizing is a less sophisticated version of seam carving, which focuses on downsizing images by removing low-energy vertical seams.
+
+## Related Packages
+
+  There are a few existing Python packages that perform content-aware image resizing, such as `pyCAIR` (available on PyPI https://pypi.org/project/pyCAIR/), and `seam-carver` (https://pypi.org/project/seam-carver/). Currently, there is no package available on CRAN to resize images based on the same mechanism, however, there is a package available on Github to seam carve image (https://github.com/vgorte/SC-Package-R). These packages use the seam carving process to increase or decrease the size of the image by finding the seam with the lowest energy values from the energy map. Our implementation of image resizing is a less sophisticated version of seam carving, which focuses on downsizing images by removing low-energy vertical seams.
+
+
 
 ## Example
 
