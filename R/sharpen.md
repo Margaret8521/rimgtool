@@ -61,20 +61,19 @@ convolve2d <- function(input, filter) {
       filt <- filter[ifil_start:ifil_end, jfil_start:jfil_end]
       inp <- input[i_start:i_end, j_start:j_end]
       val <- sum(filt * inp)
-      if(val < 0) {
-        val <- 0
-      } else if(val > 1) {
-        val <- 1
-      }
       res[r, c] <- val
     }
   }
-  res / max(res)
+  
+  (res - min(res)) / (max(res) - min(res))
 }
 
 sharpen <- function(img) {
-  filter <- array(rep(c(-1/18), 9), dim = c(3, 3))
-  filter[2, 2] <- 1
+  n <- 3
+  N <- 2 * n + 1
+  C <- n + 1
+  filter <- array(rep(c(-1/(16 * n**2)), N * N), dim = c(N, N))
+  filter[C, C] <- 1
   img2 <- img[, , 1]
   
   convolve2d(img2, filter)
