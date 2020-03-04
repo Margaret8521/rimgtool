@@ -2,24 +2,26 @@
 % Please edit documentation in R/shrink.R
 \name{shrink}
 \alias{shrink}
-\title{Return a shrinked image of desired size}
+\title{Return a shrinked image of desired size by
+removing pixels from borders of the image}
 \usage{
-shrink(img, n)
+shrink(image, width, height)
 }
 \arguments{
-\item{img}{input image as a array}
-
 \item{width}{integer desired width for new image}
 
 \item{height}{integer desired height for new image}
+
+\item{img}{input image as a array}
 }
 \value{
 array for shrinked image
 }
 \description{
-Return a shrinked image of desired size
+Return a shrinked image of desired size by
+removing pixels from borders of the image
 }
 \examples{
-old_img <- array(1:24, dim = c(3, 4, 2))
-(shrinked_img <- shrink(old_img))
+old_img <- array(1:24, dim = c(10, 10, 3))
+shrinked_img <- shrink(old_img, 5, 5)
 }
