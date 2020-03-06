@@ -1,8 +1,9 @@
-#' Return a sharpened image
+#' Detects and enhances the edges in the image and
+#' returns a sharpened and monotoned version (the same size as the original).
 #'
-#' @param img array
+#' @param img array input image
 #'
-#' @return array
+#' @return array sharpened monotone image
 #' @export
 #'
 #' @examples

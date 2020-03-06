@@ -2,18 +2,20 @@
 % Please edit documentation in R/sharpen.R
 \name{sharpen}
 \alias{sharpen}
-\title{Return a sharpened image}
+\title{Detects and enhances the edges in the image and
+returns a sharpened and monotoned version (the same size as the original).}
 \usage{
 sharpen(img)
 }
 \arguments{
-\item{img}{array}
+\item{img}{array input image}
 }
 \value{
-array
+array sharpened monotone image
 }
 \description{
-Return a sharpened image
+Detects and enhances the edges in the image and
+returns a sharpened and monotoned version (the same size as the original).
 }
 \examples{
 old_img <- array(1:(100 * 100 * 3), dim = c(100, 100, 3))
