@@ -8,6 +8,28 @@
 #' @examples
 #' old_img <- array(1:(100 * 100 * 3), dim = c(100, 100, 3))
 #' new_img <- sharpen(old_img)
+sharpen <- function(img) {
+
+  if (!is.array(img)){
+    stop("TypeError: input image should be array")
+  }
+  if (dim(img)[1] < 50 | dim(img)[2] < 50){
+    stop("ValueError: height and width of the input image should be greater than 50 x 50")
+  }
+  if (min(img) < 0 | max(img) > 1){
+    stop("ValueError: the brightness of pixels should be between 0 and 1")
+  }
+
+  n <- 3
+  N <- 2 * n + 1
+  C <- n + 1
+  filter <- array(rep(c(-1/(16 * n**2)), N * N), dim = c(N, N))
+  filter[C, C] <- 1
+  img2 <- img[, , 1]
+
+  convolve2d(img2, filter)
+}
+
 convolve2d <- function(input, filter) {
   nrow <- dim(input)[1]
   ncol <- dim(input)[2]
@@ -60,26 +82,4 @@ convolve2d <- function(input, filter) {
   }
 
   (res - min(res)) / (max(res) - min(res))
-}
-
-sharpen <- function(img) {
-
-  if (!is.array(img)){
-    stop("TypeError: input image should be array")
-  }
-  if (dim(img)[1] < 50 | dim(img)[2] < 50){
-    stop("ValueError: height and width of the input image should be greater than 50 x 50")
-  }
-  if (min(img) < 0 | max(img) > 1){
-    stop("ValueError: the brightness of pixels should be between 0 and 1")
-  }
-
-  n <- 3
-  N <- 2 * n + 1
-  C <- n + 1
-  filter <- array(rep(c(-1/(16 * n**2)), N * N), dim = c(N, N))
-  filter[C, C] <- 1
-  img2 <- img[, , 1]
-
-  convolve2d(img2, filter)
 }
