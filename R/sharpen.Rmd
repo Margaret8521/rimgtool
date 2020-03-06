@@ -16,7 +16,7 @@ This is an R Markdown format used for publishing markdown documents to GitHub. W
 You can include R code in the document as follows:
 
 ```{r 1.1 conv2d}
-library(png)
+# library(png)
 
 convolve2d <- function(input, filter) {
   nrow <- dim(input)[1]
@@ -85,7 +85,7 @@ sharpen <- function(img) {
 ```
 
 ```{r 1.2}
-img <- readPNG("../img/milad_cropped.png")
+img <- png::readPNG("../img/milad_cropped.png")
 plot.new()
 rasterImage(img[, , 1], 0, 0, 0.5, 1)
 ```

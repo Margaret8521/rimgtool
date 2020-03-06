@@ -12,7 +12,7 @@ a markdown file (.md) suitable for publishing to GitHub is generated.
 You can include R code in the document as follows:
 
 ``` r
-library(png)
+# library(png)
 
 convolve2d <- function(input, filter) {
   nrow <- dim(input)[1]
@@ -81,7 +81,7 @@ sharpen <- function(img) {
 ```
 
 ``` r
-img <- readPNG("../img/milad_cropped.png")
+img <- png::readPNG("../img/milad_cropped.png")
 plot.new()
 rasterImage(img[, , 1], 0, 0, 0.5, 1)
 ```
