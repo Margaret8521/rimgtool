@@ -15,6 +15,7 @@
 #' (compressed_img <- compress(old_img))
 #' 
 
+library(reticulate)
 
 # compress function
 compress <- function(img, b) {
@@ -33,17 +34,17 @@ compress <- function(img, b) {
   }
   
   # reshape the image
-  image_array <- array_reshape(img, dim = c(dim(v)[1]*dim(v)[2], dim(v)[3]))
+  image_array <- reticulate::array_reshape(img, dim = c(dim(img)[1]*dim(img)[2], dim(img)[3]))
   # use kmeans for compression
   model <- kmeans(image_array, 4)
   # reshape labels
-  quantized_img <- array_reshape(model$cluster, dim = c(dim(v)[1], dim(v)[2]))
+  quantized_img <- reticulate::array_reshape(model$cluster, dim = c(dim(img)[1], dim(img)[2]))
   # find the cluster centers
   colours <- model$centers
   # dequantized where the original color is replaced 
   # with the nearest prototype colour
   image <- colours[quantized_img, ]
-  image <- array_reshape(image, dim = c(dim(v)[1], dim(v)[2], dim(v)[3]))
+  image <- reticulate::array_reshape(image, dim = c(dim(img)[1], dim(img)[2], dim(img)[3]))
   
   return(image)
 }
