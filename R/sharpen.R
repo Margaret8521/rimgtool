@@ -1,3 +1,6 @@
+#' Author: Frank Lu
+#' Function name: sharpen
+#'
 #' Detects and enhances the edges in the image and
 #' returns a sharpened and monotoned version (the same size as the original).
 #'
@@ -31,6 +34,11 @@ sharpen <- function(img) {
   convolve2d(img2, filter)
 }
 
+# Implement a 2D convolution here.
+# The 2D square matrix filter will be applied on the input
+# image, which is also a 2D matrix
+# The algorithm is disign to account for borders and is equivalent
+# to padding = True
 convolve2d <- function(input, filter) {
   nrow <- dim(input)[1]
   ncol <- dim(input)[2]
