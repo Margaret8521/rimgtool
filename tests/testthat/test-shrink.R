@@ -1,4 +1,3 @@
-
 image <- array(1:24, dim = c(50, 50, 3))
 image_wrong_type <- list(1:5)
 
@@ -22,3 +21,4 @@ test_that("yield error when input dimension of new image is invalid", {
   expect_error(shrink(image, 100, 100))
   expect_error(shrink(image, -1, -1))
 })
+
