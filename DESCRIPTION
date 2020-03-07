@@ -17,7 +17,7 @@ Authors@R:
            email = "margaretzhao@yahoo.com"))
 Description: The package can compresses, sharpen, or shrink images.
     The compress function can reduces the byte size of image, 
-    the shrink function reduce image size by removing low energy pixels, 
+    the shrink function reduce image size by removing border pixels, 
     the sharpen function by applying special filters.
 License: MIT + file LICENSE
 Encoding: UTF-8
