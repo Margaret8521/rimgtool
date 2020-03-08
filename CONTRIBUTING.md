@@ -11,7 +11,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at https://github.com/rita-ni/group_12/issues.
+Report bugs at https://github.com/UBC-MDS/Rgroup12/issues.
 
 If you are reporting a bug, please include:
 
@@ -31,13 +31,13 @@ and "help wanted" is open to whoever wants to implement it.
 
 ### Write Documentation
 
-group_12 could always use more documentation, whether as part of the
-official group_12 docs, in docstrings, or even on the web in blog posts,
+Rgroup12 could always use more documentation, whether as part of the
+official Rgroup12 docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at https://github.com/rita-ni/group_12/issues.
+The best way to send feedback is to file an issue at https://github.com/UBC-MDS/Rgroup12/issues.
 
 If you are proposing a feature:
 
@@ -48,7 +48,7 @@ If you are proposing a feature:
 
 ## Get Started!
 
-Ready to contribute? Here's how to set up `group_12` for local development.
+Ready to contribute? Here's how to set up `Rgroup12` for local development.
 
 1. Fork the `Rgroup12` repo on GitHub.
 
@@ -97,7 +97,7 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.md.
-3. The pull request should work for Python 3.7 & 3.8. Check https://github.com/rita-ni/group_12/pulls and make sure that the tests pass for all supported Python versions.
+3. The pull request should work for Python 3.7 & 3.8. Check https://github.com/UBC-MDS/Rgroup12/pulls and make sure that the tests pass for all supported R versions.
 
 ## Tips
 
@@ -120,4 +120,4 @@ A reminder for the maintainers on how to deploy:
 
 ## Code of Conduct
 
-Please note that the group_12 project is released with [this Contributor Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.
+Please note that the Rgroup12 project is released with [this Contributor Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.
