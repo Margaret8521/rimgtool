@@ -31,7 +31,7 @@ Our package only allows the input image to be a 3D numpy array and output the ma
 
 ## Usage scenario
 
-- `sharpen` can be used to enhance the edges in a picture so that the details can stand out
+- `sharpen` can be used to enhance the edges in a picture so that the details can stand out.
 
 ![](img/before_sharpen.png)  ![](img/after_sharpen.png)
 
@@ -64,6 +64,3 @@ devtools::install_github("UBC-MDS/Rgroup12")
 |Compress an image to 3 bits per channel |  `Rgroup12.compress(image, 3)` |
 |Sharpen an image by detecting and enhancing the edges|  `Rgroup12.sharpen(image)`|
 |Shrink an image to desired width and height  |  `Rgroup12.shrink(image, 20, 20)`|
-
-
-
