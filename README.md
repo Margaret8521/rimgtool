@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R build status](https://github.com/UBC-MDS/rimgtool/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rimgtool/actions)
 <!-- badges: end -->
 
 The goal of Rgroup12 is to perform image processing in R.
