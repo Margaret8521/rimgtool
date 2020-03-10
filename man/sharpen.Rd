@@ -2,8 +2,8 @@
 % Please edit documentation in R/sharpen.R
 \name{sharpen}
 \alias{sharpen}
-\title{Detects and enhances the edges in the image and
-returns a sharpened and monotoned version (the same size as the original).}
+\title{Author: Frank Lu
+Function name: sharpen}
 \usage{
 sharpen(img)
 }
@@ -18,6 +18,6 @@ Detects and enhances the edges in the image and
 returns a sharpened and monotoned version (the same size as the original).
 }
 \examples{
-old_img <- array(1:(100 * 100 * 3), dim = c(100, 100, 3))
+old_img <- array(rep(c(0.5), 100 * 100 * 3), dim = c(100, 100, 3))
 new_img <- sharpen(old_img)
 }
