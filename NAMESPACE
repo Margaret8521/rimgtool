@@ -3,3 +3,4 @@
 export(compress)
 export(sharpen)
 export(shrink)
+importFrom(stats,kmeans)
