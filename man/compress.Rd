@@ -27,7 +27,7 @@ prototype colour.
 }
 \examples{
 old_img <- array(1:24, dim = c(3, 4, 2))
-(compressed_img <- compress(old_img))
+(compressed_img <- compress(old_img, 3))
 
 library(reticulate)
 }
