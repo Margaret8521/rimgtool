@@ -8,11 +8,11 @@ removing pixels from borders of the image}
 shrink(image, width, height)
 }
 \arguments{
+\item{image}{input image as a array}
+
 \item{width}{integer desired width for new image}
 
 \item{height}{integer desired height for new image}
-
-\item{img}{input image as a array}
 }
 \value{
 array for shrinked image
