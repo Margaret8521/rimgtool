@@ -5,7 +5,7 @@
 #' prototype colour.
 #'
 #' @param img array, the image to be processed
-#' @param n integer, the desired number of bits
+#' @param b integer, the desired number of bits
 #'
 #' @return array, returns the compressed image
 #' @export
