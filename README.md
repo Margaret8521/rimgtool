@@ -31,7 +31,7 @@ Our package only allows the input image to be a 3D numpy array and output the ma
 
 ## Usage scenario
 
-- `sharpen` can be used to enhance the edges in a picture so that the details can stand out.
+- `sharpen` can be used to enhance the edges in a picture so that the details can stand out.  Displayed below, the photo on the left-hand side is before sharpening, and the photo on the right-hand side is after sharpening.  As the details are enhanced by our sharpening function, wrinkles and eyebrows are more obvious on the right-hand side photo.
 
 ![](img/before_sharpen.png)  ![](img/after_sharpen.png)
 
