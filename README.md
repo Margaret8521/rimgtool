@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Rgroup12
+# rimgtool
 
 <!-- badges: start -->
 
@@ -11,7 +11,7 @@ The goal of Rgroup12 is to perform image processing in R.
 
 ## Package Overview
 
-`Rgroup12` is a R package that is intended to allow users to compress, sharpen and shrink an input image.
+`rimgtool` is a R package that is intended to allow users to compress, sharpen and shrink an input image.
 Our package only allows the input image to be a 3D numpy array and output the manipulated image as a 3D numpy array. It contains three functions: `compress()`, `sharpen()`, and `shrink()`.
 
 
