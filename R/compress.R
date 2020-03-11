@@ -11,7 +11,6 @@
 #' @export
 #' 
 #' @importFrom stats kmeans
-#' @importFrom reticulate array_reshape
 #' @examples
 #' old_img <- array(1:24, dim = c(3, 4, 2))
 #' (compressed_img <- compress(old_img, 3L))
@@ -35,18 +34,21 @@ compress <- function(img, b) {
     stop("ValueError: b should be positive")
   }
   
+  
   # reshape the image
-  image_array <- reticulate::array_reshape(img, dim = c(dim(img)[1]*dim(img)[2], dim(img)[3]))
+  image_array <- img
+  dim(image_array) <- c(dim(img)[1]*dim(img)[2], dim(img)[3])
   # use kmeans for compression
   model <- kmeans(image_array, 4)
   # reshape labels
-  quantized_img <- reticulate::array_reshape(model$cluster, dim = c(dim(img)[1], dim(img)[2]))
+  quantized_img <- model$cluster
+  dim(quantized_img) <- c(dim(img)[1], dim(img)[2])
   # find the cluster centers
   colours <- model$centers
   # dequantized where the original color is replaced 
   # with the nearest prototype colour
   image <- colours[quantized_img, ]
-  image <- reticulate::array_reshape(image, dim = c(dim(img)[1], dim(img)[2], dim(img)[3]))
+  dim(image) <- c(dim(img)[1], dim(img)[2], dim(img)[3])
   
   return(image)
 }
