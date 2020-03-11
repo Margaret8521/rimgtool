@@ -3,5 +3,4 @@
 export(compress)
 export(sharpen)
 export(shrink)
-importFrom(reticulate,array_reshape)
 importFrom(stats,kmeans)
