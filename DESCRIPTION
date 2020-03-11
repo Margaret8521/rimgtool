@@ -28,4 +28,4 @@ Suggests:
     covr
 URL: https://github.com/UBC-MDS/rimgtool
 BugReports: https://github.com/UBC-MDS/rimgtool/issues
-Import: reticulate
+Imports: reticulate
