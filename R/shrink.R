@@ -1,7 +1,7 @@
 #' Return a shrinked image of desired size by
 #' removing pixels from borders of the image
 #'
-#' @param img input image as a array
+#' @param image input image as a array
 #' @param width integer desired width for new image
 #' @param height integer desired height for new image
 #'
@@ -19,7 +19,8 @@ shrink <- function(image, width, height){
     stop("TypeError: input type for image should be array")
   }
   if (height > dim(image)[1] | width > dim(image)[2]){
-    stop("ValueError: Desired height and width cannot exceeds original height and width")
+    stop("ValueError: Desired height and width cannot \n
+    exceeds original height and width")
   }
   if (width %% 1 != 0 | height %% 1 != 0 ){
     stop("TypeError: Height and width for new image must be integer")
