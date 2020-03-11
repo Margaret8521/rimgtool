@@ -11,6 +11,7 @@
 #' @export
 #' 
 #' @importFrom stats kmeans
+#' @importFrom reticulate array_reshape
 #' @examples
 #' old_img <- array(1:24, dim = c(3, 4, 2))
 #' (compressed_img <- compress(old_img, 3L))
