@@ -8,6 +8,8 @@
 [![R build status](https://github.com/UBC-MDS/rimgtool/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/rimgtool/actions)
 
 [![codecov](https://codecov.io/gh/UBC-MDS/rimgtool/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rimgtool)
+
+[![website](https://img.icons8.com/clouds/100/000000/external-link.png)](https://ubc-mds.github.io/rimgtool/)
 <!-- badges: end -->
 
 The goal of `rimgtool` is to perform image processing in R.
