@@ -10,7 +10,7 @@
 [![codecov](https://codecov.io/gh/UBC-MDS/rimgtool/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rimgtool)
 <!-- badges: end -->
 
-The goal of Rgroup12 is to perform image processing in R.
+The goal of `rimgtool` is to perform image processing in R.
 
 ## Package Overview
 
