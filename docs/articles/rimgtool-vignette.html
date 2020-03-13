@@ -102,13 +102,12 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>img &lt;-<span class="st"> </span>png<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/png/man/readPNG.html">readPNG</a></span>(<span class="st">"../img/milad_cropped.png"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="kw"><a href="https://rdrr.io/r/graphics/frame.html">plot.new</a></span>()</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="kw"><a href="https://rdrr.io/r/graphics/rasterImage.html">rasterImage</a></span>(img[, , <span class="dv">1</span>], <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="rimgtool-vignette_files/figure-html/1.1-1.png" width="1440"></p>
+<p><img src="../img/before_sharpen.png"></p>
 <p>Then, we pass the image into the <code><a href="../reference/sharpen.html">sharpen()</a></code> function and get an edge-enhanced back. We can compare the two images, and it is obvious that the wrinkles and hair of the photo below have more details.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>img2 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/sharpen.html">sharpen</a></span>(img)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#&gt; [1] "row=372; col=372"</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="kw"><a href="https://rdrr.io/r/graphics/frame.html">plot.new</a></span>()</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="kw"><a href="https://rdrr.io/r/graphics/rasterImage.html">rasterImage</a></span>(img2, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="rimgtool-vignette_files/figure-html/1.3%20test-1.png" width="1440"></p>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw"><a href="https://rdrr.io/r/graphics/frame.html">plot.new</a></span>()</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="kw"><a href="https://rdrr.io/r/graphics/rasterImage.html">rasterImage</a></span>(img2, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="../img/after_sharpen.png"></p>
 </div>
 </div>
   </div>
