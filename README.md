@@ -10,7 +10,7 @@
 [![codecov](https://codecov.io/gh/UBC-MDS/rimgtool/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rimgtool)
 <!-- badges: end -->
 
-The goal of Rgroup12 is to perform image processing in R.
+The goal of `rimgtool` is to perform image processing in R.
 
 ## Package Overview
 
@@ -45,7 +45,7 @@ You can install the development version from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("UBC-MDS/Rgroup12")
+devtools::install_github("UBC-MDS/rimgtool")
 ```
 
 ## Related Packages
@@ -62,8 +62,8 @@ devtools::install_github("UBC-MDS/Rgroup12")
 
 ## Usage
 
-|Task    |  After import `Rgroup12`   |
+|Task    |  After import `rimgtool`   |
 |---------|---------------------|
-|Compress an image to 3 bits per channel |  `Rgroup12.compress(image, 3)` |
-|Sharpen an image by detecting and enhancing the edges|  `Rgroup12.sharpen(image)`|
-|Shrink an image to desired width and height  |  `Rgroup12.shrink(image, 20, 20)`|
+|Compress an image to 3 bits per channel |  `rimgtool.compress(image, 3)` |
+|Sharpen an image by detecting and enhancing the edges|  `rimgtool.sharpen(image)`|
+|Shrink an image to desired width and height  |  `rimgtool.shrink(image, 20, 20)`|

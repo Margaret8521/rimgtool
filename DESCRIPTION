@@ -25,7 +25,9 @@ LazyData: true
 RoxygenNote: 7.0.2
 Suggests: 
     testthat (>= 2.1.0),
-    covr
+    covr,
+    knitr,
+    rmarkdown
 URL: https://github.com/UBC-MDS/rimgtool
 BugReports: https://github.com/UBC-MDS/rimgtool/issues
-
+VignetteBuilder: knitr
