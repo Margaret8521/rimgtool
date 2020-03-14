@@ -14,6 +14,16 @@
 
 The goal of `rimgtool` is to perform image processing in R.
 
+
+## Team Members
+
+|Name    |  Github   |
+|---------|---------------------|
+|Ruidan Ni |  [rita-ni](https://github.com/rita-ni)|
+|Frank Lu|  [Frank Lu](https://github.com/franklu2014)|
+|Kexin Zhao| [Margaret8521](https://github.com/Margaret8521)|
+
+
 ## Package Overview
 
 `rimgtool` is a R package that is intended to allow users to compress, sharpen and shrink an input image.
@@ -34,11 +44,6 @@ Our package only allows the input image to be a 3D numpy array and output the ma
   - A function that removes border pixels for image shrinking until the desired width and height are reached.
 
 
-## Usage scenario
-
-- `sharpen` can be used to enhance the edges in a picture so that the details can stand out.  Displayed below, the photo on the left-hand side is before sharpening, and the photo on the right-hand side is after sharpening.  As the details are enhanced by our sharpening function, wrinkles and eyebrows are more obvious on the right-hand side photo.
-
-![](img/before_sharpen.png)  ![](img/after_sharpen.png)
 
 ## Installation
 
@@ -58,7 +63,7 @@ devtools::install_github("UBC-MDS/rimgtool")
 ## Dependencies
 
 
-- reticulate
+- stats
 
 
 
@@ -69,3 +74,10 @@ devtools::install_github("UBC-MDS/rimgtool")
 |Compress an image to 3 bits per channel |  `rimgtool.compress(image, 3)` |
 |Sharpen an image by detecting and enhancing the edges|  `rimgtool.sharpen(image)`|
 |Shrink an image to desired width and height  |  `rimgtool.shrink(image, 20, 20)`|
+
+
+## Usage scenario
+
+- `sharpen` can be used to enhance the edges in a picture so that the details can stand out.  Displayed below, the photo on the left-hand side is before sharpening, and the photo on the right-hand side is after sharpening.  As the details are enhanced by our sharpening function, wrinkles and eyebrows are more obvious on the right-hand side photo.
+
+![](img/before_sharpen.png)  ![](img/after_sharpen.png)
