@@ -9,7 +9,7 @@
 
 [![codecov](https://codecov.io/gh/UBC-MDS/rimgtool/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/rimgtool)
 
-[![website](https://img.icons8.com/clouds/100/000000/external-link.png)](https://ubc-mds.github.io/rimgtool/)
+[![](https://img.icons8.com/clouds/100/000000/external-link.png)](https://ubc-mds.github.io/rimgtool/)   [project vignette](https://ubc-mds.github.io/rimgtool/articles/rimgtool-vignette.html)
 <!-- badges: end -->
 
 The goal of `rimgtool` is to perform image processing in R.
