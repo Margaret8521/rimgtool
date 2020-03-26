@@ -48,8 +48,6 @@ convolve2d <- function(input, filter) {
   filter_half <- filter_l %/% 2
   filter_center <- filter_half + 1
 
-  print(paste0("row=", nrow, "; col=", ncol))
-
   for(r in 1:nrow) {
     for(c in 1:ncol) {
       if(r - filter_half < 1) {

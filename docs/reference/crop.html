@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Author: Frank Lu
-Function name: sharpen — sharpen • rimgtool</title>
+<title>Return a croped image of desired size by
+removing pixels from borders of the image — crop • rimgtool</title>
 
 
 <!-- jquery -->
@@ -36,10 +36,10 @@ Function name: sharpen — sharpen • rimgtool</title>
 
 
 
-<meta property="og:title" content="Author: Frank Lu
-Function name: sharpen — sharpen" />
-<meta property="og:description" content="Detects and enhances the edges in the image and
-returns a sharpened and monotoned version (the same size as the original)." />
+<meta property="og:title" content="Return a croped image of desired size by
+removing pixels from borders of the image — crop" />
+<meta property="og:description" content="Return a croped image of desired size by
+removing pixels from borders of the image" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -120,35 +120,43 @@ returns a sharpened and monotoned version (the same size as the original)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Author: Frank Lu
-Function name: sharpen</h1>
-    <small class="dont-index">Source: <a href='https://github.com/UBC-MDS/rimgtool/blob/master/R/sharpen.R'><code>R/sharpen.R</code></a></small>
-    <div class="hidden name"><code>sharpen.Rd</code></div>
+    <h1>Return a croped image of desired size by
+removing pixels from borders of the image</h1>
+    <small class="dont-index">Source: <a href='https://github.com/UBC-MDS/rimgtool/blob/master/R/crop.R'><code>R/crop.R</code></a></small>
+    <div class="hidden name"><code>crop.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Detects and enhances the edges in the image and
-returns a sharpened and monotoned version (the same size as the original).</p>
+    <p>Return a croped image of desired size by
+removing pixels from borders of the image</p>
     </div>
 
-    <pre class="usage"><span class='fu'>sharpen</span>(<span class='no'>img</span>)</pre>
+    <pre class="usage"><span class='fu'>crop</span>(<span class='no'>image</span>, <span class='no'>width</span>, <span class='no'>height</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>img</th>
-      <td><p>array input image</p></td>
+      <th>image</th>
+      <td><p>input image as a array</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>integer desired width for new image</p></td>
+    </tr>
+    <tr>
+      <th>height</th>
+      <td><p>integer desired height for new image</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>array sharpened monotone image</p>
+    <p>array for croped image</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>old_img</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.5</span>), <span class='fl'>100</span> * <span class='fl'>100</span> * <span class='fl'>3</span>), <span class='kw'>dim</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>, <span class='fl'>100</span>, <span class='fl'>3</span>))
-<span class='no'>new_img</span> <span class='kw'>&lt;-</span> <span class='fu'>sharpen</span>(<span class='no'>old_img</span>)</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>old_img</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span>(<span class='fl'>1</span>:<span class='fl'>24</span>, <span class='kw'>dim</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>3</span>))
+<span class='no'>croped_img</span> <span class='kw'>&lt;-</span> <span class='fu'>crop</span>(<span class='no'>old_img</span>, <span class='fl'>5</span>, <span class='fl'>5</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

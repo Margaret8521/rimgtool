@@ -23,28 +23,94 @@ This package provides three functions:
 
 As the name suggests, we aim to providing some tools for easy image processing.  To use this package, follow the installation guide on README and install this package.  Then, import the package.
 
-```{r setup}
+## Team Members
+
+| Name       | Github                                          |
+| ---------- | ----------------------------------------------- |
+| Ruidan Ni  | [rita-ni](https://github.com/rita-ni)           |
+| Frank Lu   | [Frank Lu](https://github.com/franklu2014)      |
+| Kexin Zhao | [Margaret8521](https://github.com/Margaret8521) |
+
+## Package Overview
+
+`rimgtool` is a R package that is intended to allow users to compress,
+sharpen and crop an input image. Our package only allows the input image
+to be a 3D numpy array and output the manipulated image as a 3D numpy
+array. It contains three functions: `compress()`, `sharpen()`, and
+`crop()`.
+
+## Feature Description
+
+  - `compress`:
+      - This function quantizes an image by restricting each pixel to
+        only take on one of the desired colour values and return a
+        version of the image (the same size as the original) where each
+        pixel’s original colour is replaced with the nearest prototype
+        colour.
+  - `sharpen`:
+      - This function enhances the edges in the image and returns a
+        sharper-looking image. At this moment, this function is
+        restricted to gray-scale images only
+  - `crop`:
+      - A function that removes border pixels for image croping until
+        the desired width and height are reached.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+```{r 1.1}
+# install.packages("devtools")
+devtools::install_github("UBC-MDS/rimgtool")
+```
+
+Then, import this package in R console:
+
+```{r 1.2 setup}
 library(rimgtool)
 ```
 
-## Shrpen function
+### `Shrpen` function
 
-The purpose of this function is to detect and enhance the edges in a grey-scale image using a 2-D convolution.  To demonstrate how it works, we first load a image of our respectful program director.
+The purpose of this function is to detect and enhance the edges in a grey-scale image using a 2-D convolution so that the details can stand out. Displayed BELOW, the photo on the left-hand side is before sharpening, and the photo on the right-hand side is after sharpening. As the details are enhanced by our sharpening function, the center portion of the flower look more focused.
 
-```{r 1.1, eval=FALSE}
-img <- png::readPNG("../img/milad_cropped.png")
-plot.new()
-rasterImage(img[, , 1], 0, 0, 0.5, 1)
+Apply `sharpen` function: `sharpen(img)`
+
+```
+# install.packages('jpeg')
+library(jpeg)
+img <- jpeg::readJPEG("img/free-wallpaper.jpg")
+jpeg::writeJPEG(sharpen(img), target = 'img/sharpened.jpeg')
 ```
 
-![](../img/before_sharpen.png)
+<img src="../img/sharpen_before.png" data-canonical-src="img/sharpen_before.png" width="600" height="450" />  <img src="../img/sharpen_after.png" data-canonical-src="img/sharpen_after.png" width="600" height="450" />
 
-Then, we pass the image into the `sharpen()` function and get an edge-enhanced back.  We can compare the two images, and it is obvious that the wrinkles and hair of the photo below have more details.
+### `Compress` function
 
-```{r 1.3 test, eval=FALSE}
-img2 <- sharpen(img)
-plot.new()
-rasterImage(img2, 0, 0, 0.5, 1)
+We are going to use `butterfly.jpg` image which is in the `img` folder of this repository for illustration.
+
+![](../img/butterfly.jpg)
+
+We can apply the compress function:
+`compress(image, 4)`
+
+```
+library(jpeg) # install.packages('jpeg')
+library(OpenImageR) # install.packages('OpenImageR')
+img <- jpeg::readJPEG("img/butterfly.jpg")
+jpeg::writeJPEG(compress(img, 4L), target = 'img/compress.jpeg')
+
+```
+![](../img/compress.jpeg)
+
+### `Crop` function
+
+We can also apply the crop function:
+
+`crop(img, 400, 400)`
+
+```
+jpeg::writeJPEG(crop(img, 400, 400), target = 'img/crop.jpeg')
 ```
 
-![](../img/after_sharpen.png)
+![](../img/crop.jpeg)

@@ -87,12 +87,36 @@
 <!-- badges: start -->
 
 <p><a href="https://codecov.io/gh/UBC-MDS/rimgtool"><img src="https://codecov.io/gh/UBC-MDS/rimgtool/branch/master/graph/badge.svg" alt="codecov"></a></p>
-<p><a href="https://ubc-mds.github.io/rimgtool/"><img src="https://img.icons8.com/clouds/100/000000/external-link.png" alt="website"></a> <!-- badges: end --></p>
+<p><a href="https://ubc-mds.github.io/rimgtool/"><img src="https://img.icons8.com/clouds/100/000000/external-link.png"></a> <a href="https://ubc-mds.github.io/rimgtool/articles/rimgtool-vignette.html">project vignette</a> <!-- badges: end --></p>
 <p>The goal of <code>rimgtool</code> is to perform image processing in R.</p>
+<div id="team-members" class="section level2">
+<h2 class="hasAnchor">
+<a href="#team-members" class="anchor"></a>Team Members</h2>
+<table class="table">
+<thead><tr class="header">
+<th>Name</th>
+<th>Github</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Ruidan Ni</td>
+<td><a href="https://github.com/rita-ni">rita-ni</a></td>
+</tr>
+<tr class="even">
+<td>Frank Lu</td>
+<td><a href="https://github.com/franklu2014">Frank Lu</a></td>
+</tr>
+<tr class="odd">
+<td>Kexin Zhao</td>
+<td><a href="https://github.com/Margaret8521">Margaret8521</a></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="package-overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#package-overview" class="anchor"></a>Package Overview</h2>
-<p><code>rimgtool</code> is a R package that is intended to allow users to compress, sharpen and crop an input image. Our package only allows the input image to be a 3D numpy array and output the manipulated image as a 3D numpy array. It contains three functions: <code><a href="reference/compress.html">compress()</a></code>, <code><a href="reference/sharpen.html">sharpen()</a></code>, and <code><a href="reference/crop.html">crop()</a></code>.</p>
+<p><code>rimgtool</code> is a R package that is intended to allow users to compress, sharpen and crop an input image. Our package only allows the input image to be a 3D vector and output the manipulated image as a 3D numpy array. It contains three functions: <code><a href="reference/compress.html">compress()</a></code>, <code><a href="reference/sharpen.html">sharpen()</a></code>, and <code><a href="reference/crop.html">crop()</a></code>.</p>
 </div>
 <div id="feature-description" class="section level2">
 <h2 class="hasAnchor">
@@ -118,15 +142,6 @@
 </li>
 </ul>
 </div>
-<div id="usage-scenario" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage-scenario" class="anchor"></a>Usage scenario</h2>
-<ul>
-<li>
-<code>sharpen</code> can be used to enhance the edges in a picture so that the details can stand out. Displayed below, the photo on the left-hand side is before sharpening, and the photo on the right-hand side is after sharpening. As the details are enhanced by our sharpening function, wrinkles and eyebrows are more obvious on the right-hand side photo.</li>
-</ul>
-<p><img src="img/before_sharpen.png"><img src="img/after_sharpen.png"></p>
-</div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -143,7 +158,7 @@
 <h2 class="hasAnchor">
 <a href="#dependencies" class="anchor"></a>Dependencies</h2>
 <ul>
-<li>reticulate</li>
+<li>stats</li>
 </ul>
 </div>
 <div id="usage" class="section level2">
@@ -151,8 +166,8 @@
 <a href="#usage" class="anchor"></a>Usage</h2>
 <table class="table">
 <colgroup>
-<col width="30%">
-<col width="70%">
+<col width="63%">
+<col width="36%">
 </colgroup>
 <thead><tr class="header">
 <th>Task</th>
@@ -161,8 +176,8 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Compress an image to 3 bits per channel</td>
-<td><code>rimgtool.compress(image, 3)</code></td>
+<td>Compress an image to include 2^4 = 16 colors</td>
+<td><code>rimgtool.compress(image, 4L)</code></td>
 </tr>
 <tr class="even">
 <td>Sharpen an image by detecting and enhancing the edges</td>
@@ -174,6 +189,36 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div id="usage-scenario" class="section level2">
+<h2 class="hasAnchor">
+<a href="#usage-scenario" class="anchor"></a>Usage scenario</h2>
+<p>First, we should load the <code>rimgtool</code> library:</p>
+<p><code><a href="https://rdrr.io/r/base/library.html">library(rimgtool)</a></code></p>
+<p>We are going to use <code>butterfly.jpg</code> image which is in the <code>img</code> folder of this repository for illustration.</p>
+<p><img src="img/butterfly.jpg"></p>
+<p>We can apply the compress function: <code><a href="reference/compress.html">compress(image, 4L)</a></code></p>
+<pre><code><a href="https://rdrr.io/r/base/library.html">library(jpeg) # install.packages('jpeg')
+library(OpenImageR) # install.packages('OpenImageR')
+img &lt;- jpeg::readJPEG("img/butterfly.jpg")
+jpeg::writeJPEG(compress(img, 4L), target = 'img/compress.jpeg')
+</a></code></pre>
+<p><img src="img/compress.jpeg"></p>
+<p>We can also apply the crop function:</p>
+<p><code><a href="reference/crop.html">crop(img, 400, 400)</a></code></p>
+<pre><code><a href="https://rdrr.io/pkg/jpeg/man/writeJPEG.html">jpeg::writeJPEG(crop(img, 400, 400), target = 'img/crop.jpeg')</a></code></pre>
+<p><img src="img/crop.jpeg"></p>
+<p>We can also apply the sharpen function: <code><a href="reference/sharpen.html">sharpen(image)</a></code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># install.packages('jpeg')</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(jpeg)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>img &lt;-<span class="st"> </span>jpeg<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/jpeg/man/readJPEG.html">readJPEG</a></span>(<span class="st">"img/free-wallpaper.jpg"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>jpeg<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/jpeg/man/writeJPEG.html">writeJPEG</a></span>(<span class="kw"><a href="reference/sharpen.html">sharpen</a></span>(img), <span class="dt">target =</span> <span class="st">'img/sharpened.jpeg'</span>)</span></code></pre></div>
+<p><img src="img/sharpen_before.png" data-canonical-src="img/sharpen_before.png" width="400" height="300"><img src="img/sharpen_after.png" data-canonical-src="img/sharpen_after.png" width="400" height="300"></p>
+<ul>
+<li>
+<code>sharpen</code> can be used to enhance the edges in a picture so that the details can stand out. Displayed above, the photo on the left-hand side is before sharpening, and the photo on the right-hand side is after sharpening. As the details are enhanced by our sharpening function, the center portion of the flower look more focused.</li>
+</ul>
+<p>The documentation is hosted on <a href="https://ubc-mds.github.io/rimgtool/">pkgdown</a>, and you can also refer to our <a href="https://ubc-mds.github.io/rimgtool/articles/rimgtool-vignette.html">project vignette</a>.</p>
 </div>
 </div>
   </div>

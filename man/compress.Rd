@@ -4,8 +4,8 @@
 \alias{compress}
 \title{Return a compressed image
 Quantizes an image into 2^b clusters and
-return a version of the image (the same size as the original) 
-where each pixel's original colour is replaced with the nearest 
+return a version of the image (the same size as the original)
+where each pixel's original colour is replaced with the nearest
 prototype colour.}
 \usage{
 compress(img, b)
@@ -21,8 +21,8 @@ array, returns the compressed image
 \description{
 Return a compressed image
 Quantizes an image into 2^b clusters and
-return a version of the image (the same size as the original) 
-where each pixel's original colour is replaced with the nearest 
+return a version of the image (the same size as the original)
+where each pixel's original colour is replaced with the nearest
 prototype colour.
 }
 \examples{

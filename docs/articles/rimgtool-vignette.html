@@ -94,20 +94,125 @@
 <a href="#introduction-to-rimgtool" class="anchor"></a>Introduction to rimgtool</h1>
 <p>This package provides three functions: - sharpen - compress - crop</p>
 <p>As the name suggests, we aim to providing some tools for easy image processing. To use this package, follow the installation guide on README and install this package. Then, import the package.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rimgtool)</span></code></pre></div>
-<div id="shrpen-function" class="section level2">
+<div id="team-members" class="section level2">
 <h2 class="hasAnchor">
-<a href="#shrpen-function" class="anchor"></a>Shrpen function</h2>
-<p>The purpose of this function is to detect and enhance the edges in a grey-scale image using a 2-D convolution. To demonstrate how it works, we first load a image of our respectful program director.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>img &lt;-<span class="st"> </span>png<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/png/man/readPNG.html">readPNG</a></span>(<span class="st">"../img/milad_cropped.png"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw"><a href="https://rdrr.io/r/graphics/frame.html">plot.new</a></span>()</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw"><a href="https://rdrr.io/r/graphics/rasterImage.html">rasterImage</a></span>(img[, , <span class="dv">1</span>], <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="../img/before_sharpen.png"></p>
-<p>Then, we pass the image into the <code><a href="../reference/sharpen.html">sharpen()</a></code> function and get an edge-enhanced back. We can compare the two images, and it is obvious that the wrinkles and hair of the photo below have more details.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>img2 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/sharpen.html">sharpen</a></span>(img)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="kw"><a href="https://rdrr.io/r/graphics/frame.html">plot.new</a></span>()</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="kw"><a href="https://rdrr.io/r/graphics/rasterImage.html">rasterImage</a></span>(img2, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="../img/after_sharpen.png"></p>
+<a href="#team-members" class="anchor"></a>Team Members</h2>
+<table class="table">
+<thead><tr class="header">
+<th>Name</th>
+<th>Github</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Ruidan Ni</td>
+<td><a href="https://github.com/rita-ni">rita-ni</a></td>
+</tr>
+<tr class="even">
+<td>Frank Lu</td>
+<td><a href="https://github.com/franklu2014">Frank Lu</a></td>
+</tr>
+<tr class="odd">
+<td>Kexin Zhao</td>
+<td><a href="https://github.com/Margaret8521">Margaret8521</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="package-overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#package-overview" class="anchor"></a>Package Overview</h2>
+<p><code>rimgtool</code> is a R package that is intended to allow users to compress, sharpen and crop an input image. Our package only allows the input image to be a 3D numpy array and output the manipulated image as a 3D numpy array. It contains three functions: <code><a href="../reference/compress.html">compress()</a></code>, <code><a href="../reference/sharpen.html">sharpen()</a></code>, and <code><a href="../reference/crop.html">crop()</a></code>.</p>
+</div>
+<div id="feature-description" class="section level2">
+<h2 class="hasAnchor">
+<a href="#feature-description" class="anchor"></a>Feature Description</h2>
+<ul>
+<li>
+<code>compress</code>:
+<ul>
+<li>This function quantizes an image by restricting each pixel to only take on one of the desired colour values and return a version of the image (the same size as the original) where each pixel’s original colour is replaced with the nearest prototype colour.</li>
+</ul>
+</li>
+<li>
+<code>sharpen</code>:
+<ul>
+<li>This function enhances the edges in the image and returns a sharper-looking image. At this moment, this function is restricted to gray-scale images only</li>
+</ul>
+</li>
+<li>
+<code>crop</code>:
+<ul>
+<li>A function that removes border pixels for image croping until the desired width and height are reached.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"UBC-MDS/rimgtool"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#&gt; Downloading GitHub repo UBC-MDS/rimgtool@master</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#&gt;   </span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>   checking <span class="cf">for</span> file ‘<span class="op">/</span>tmp<span class="op">/</span>RtmpI2yYIv<span class="op">/</span>remotes5ee65f5e5eb5<span class="op">/</span>UBC<span class="op">-</span>MDS<span class="op">-</span>rimgtool<span class="op">-</span>c70d854<span class="op">/</span>DESCRIPTION’ ...</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  </span>
+<span id="cb1-7"><a href="#cb1-7"></a>✓  checking <span class="cf">for</span> file ‘<span class="op">/</span>tmp<span class="op">/</span>RtmpI2yYIv<span class="op">/</span>remotes5ee65f5e5eb5<span class="op">/</span>UBC<span class="op">-</span>MDS<span class="op">-</span>rimgtool<span class="op">-</span>c70d854<span class="op">/</span>DESCRIPTION’</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co">#&gt; </span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>  </span>
+<span id="cb1-10"><a href="#cb1-10"></a>─  preparing ‘rimgtool’<span class="op">:</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co">#&gt;    checking DESCRIPTION meta-information ...</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="st">  </span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>✓  checking DESCRIPTION meta<span class="op">-</span>information</span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co">#&gt; </span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>  </span>
+<span id="cb1-16"><a href="#cb1-16"></a>─  checking <span class="cf">for</span> LF line<span class="op">-</span>endings <span class="cf">in</span> source and make files and shell scripts</span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co">#&gt; </span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>  </span>
+<span id="cb1-19"><a href="#cb1-19"></a>─  checking <span class="cf">for</span> empty or unneeded directories</span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co">#&gt; </span></span>
+<span id="cb1-21"><a href="#cb1-21"></a>  </span>
+<span id="cb1-22"><a href="#cb1-22"></a>─  building ‘rimgtool_<span class="dv">0</span>.<span class="dv">0</span>.<span class="dv">0</span>.<span class="fl">9000.</span>tar.gz’</span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co">#&gt; </span></span>
+<span id="cb1-24"><a href="#cb1-24"></a>  </span>
+<span id="cb1-25"><a href="#cb1-25"></a>   </span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="co">#&gt; </span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="co">#&gt; Installing package into '/tmp/RtmpZF4Lpy/temp_libpath5087cace86a'</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="co">#&gt; (as 'lib' is unspecified)</span></span></code></pre></div>
+<p>Then, import this package in R console:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rimgtool)</span></code></pre></div>
+<div id="shrpen-function" class="section level3">
+<h3 class="hasAnchor">
+<a href="#shrpen-function" class="anchor"></a><code>Shrpen</code> function</h3>
+<p>The purpose of this function is to detect and enhance the edges in a grey-scale image using a 2-D convolution so that the details can stand out. Displayed BELOW, the photo on the left-hand side is before sharpening, and the photo on the right-hand side is after sharpening. As the details are enhanced by our sharpening function, the center portion of the flower look more focused.</p>
+<p>Apply <code>sharpen</code> function: <code><a href="../reference/sharpen.html">sharpen(img)</a></code></p>
+<pre><code><a href="https://rdrr.io/r/base/library.html"># install.packages('jpeg')
+library(jpeg)
+img &lt;- jpeg::readJPEG("img/free-wallpaper.jpg")
+jpeg::writeJPEG(sharpen(img), target = 'img/sharpened.jpeg')</a></code></pre>
+<p><img src="../img/sharpen_before.png" data-canonical-src="img/sharpen_before.png" width="600" height="450"><img src="../img/sharpen_after.png" data-canonical-src="img/sharpen_after.png" width="600" height="450"></p>
+</div>
+<div id="compress-function" class="section level3">
+<h3 class="hasAnchor">
+<a href="#compress-function" class="anchor"></a><code>Compress</code> function</h3>
+<p>We are going to use <code>butterfly.jpg</code> image which is in the <code>img</code> folder of this repository for illustration.</p>
+<p><img src="../img/butterfly.jpg"></p>
+<p>We can apply the compress function: <code><a href="../reference/compress.html">compress(image, 4)</a></code></p>
+<pre><code><a href="https://rdrr.io/r/base/library.html">library(jpeg) # install.packages('jpeg')
+library(OpenImageR) # install.packages('OpenImageR')
+img &lt;- jpeg::readJPEG("img/butterfly.jpg")
+jpeg::writeJPEG(compress(img, 4L), target = 'img/compress.jpeg')
+</a></code></pre>
+<p><img src="../img/compress.jpeg"></p>
+</div>
+<div id="crop-function" class="section level3">
+<h3 class="hasAnchor">
+<a href="#crop-function" class="anchor"></a><code>Crop</code> function</h3>
+<p>We can also apply the crop function:</p>
+<p><code><a href="../reference/crop.html">crop(img, 400, 400)</a></code></p>
+<pre><code><a href="https://rdrr.io/pkg/jpeg/man/writeJPEG.html">jpeg::writeJPEG(crop(img, 400, 400), target = 'img/crop.jpeg')</a></code></pre>
+<p><img src="../img/crop.jpeg"></p>
+</div>
 </div>
 </div>
   </div>
@@ -121,7 +226,10 @@
 <li>
 <a href="#introduction-to-rimgtool">Introduction to rimgtool</a>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#shrpen-function">Shrpen function</a></li>
+<li><a href="#team-members">Team Members</a></li>
+      <li><a href="#package-overview">Package Overview</a></li>
+      <li><a href="#feature-description">Feature Description</a></li>
+      <li><a href="#installation">Installation</a></li>
       </ul>
 </li>
       </ul>
