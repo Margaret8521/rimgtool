@@ -31,7 +31,7 @@ The goal of `rimgtool` is to perform image processing in R.
 
 `rimgtool` is a R package that is intended to allow users to compress,
 sharpen and crop an input image. Our package only allows the input image
-to be a 3D numpy array and output the manipulated image as a 3D numpy
+to be a 3D vector and output the manipulated image as a 3D numpy
 array. It contains three functions: `compress()`, `sharpen()`, and
 `crop()`.
 
@@ -87,7 +87,7 @@ algorithms.
 
 | Task                                                  | After import `rimgtool`        |
 | ----------------------------------------------------- | ------------------------------ |
-| Compress an image to 3 bits per channel               | `rimgtool.compress(image, 3)`  |
+| Compress an image to include 2^4 = 16 colors          | `rimgtool.compress(image, 4L)`  |
 | Sharpen an image by detecting and enhancing the edges | `rimgtool.sharpen(image)`      |
 | crop an image to desired width and height             | `rimgtool.crop(image, 20, 20)` |
 
@@ -102,7 +102,7 @@ We are going to use `butterfly.jpg` image which is in the `img` folder of this r
 ![](img/butterfly.jpg)
 
 We can apply the compress function:
-`compress(image, 4)`
+`compress(image, 4L)`
 
 ```
 library(jpeg) # install.packages('jpeg')
@@ -126,14 +126,22 @@ jpeg::writeJPEG(crop(img, 400, 400), target = 'img/crop.jpeg')
 ![](img/crop.jpeg)
 
 We can also apply the sharpen function:
-`sharpen.sharpen(image)`
+`sharpen(image)`
 
+```R
+# install.packages('jpeg')
+library(jpeg)
+img <- jpeg::readJPEG("img/free-wallpaper.jpg")
+jpeg::writeJPEG(sharpen(img), target = 'img/sharpened.jpeg')
+```
+
+<img src="img/sharpen_before.png" data-canonical-src="img/sharpen_before.png" width="400" height="300" />  <img src="img/sharpen_after.png" data-canonical-src="img/sharpen_after.png" width="400" height="300" />
 
   - `sharpen` can be used to enhance the edges in a picture so that the
-    details can stand out. Displayed below, the photo on the left-hand
+    details can stand out. Displayed above, the photo on the left-hand
     side is before sharpening, and the photo on the right-hand side is
     after sharpening. As the details are enhanced by our sharpening
-    function, wrinkles and eyebrows are more obvious on the right-hand
-    side photo.
-
-
+    function, the center portion of the flower look more focused.
+    
+The documentation is hosted on [pkgdown](https://ubc-mds.github.io/rimgtool/), and you can also refer to our [project
+vignette](https://ubc-mds.github.io/rimgtool/articles/rimgtool-vignette.html).
