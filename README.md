@@ -93,6 +93,42 @@ algorithms.
 
 ## Usage scenario
 
+First, we should load the `rimgtool` library:
+
+`library(rimgtool)`
+
+We are going to use `butterfly.jpg` image which is in the `img` folder of this repository for illustration.
+
+![](img/butterfly.jpg)
+
+We can apply the compress function:
+`compress(image, 4)`
+
+```
+library(jpeg) # install.packages('jpeg')
+library(OpenImageR) # install.packages('OpenImageR')
+img <- jpeg::readJPEG("img/butterfly.jpg")
+jpeg::writeJPEG(compress(img, 4L), target = 'img/compress.jpeg')
+
+```
+![](img/compress.jpeg)
+
+
+We can also apply the crop function:
+
+`crop(img, 400, 400)`
+
+
+```
+jpeg::writeJPEG(crop(img, 400, 400), target = 'img/crop.jpeg')
+```
+
+![](img/crop.jpeg)
+
+We can also apply the sharpen function:
+`sharpen.sharpen(image)`
+
+
   - `sharpen` can be used to enhance the edges in a picture so that the
     details can stand out. Displayed below, the photo on the left-hand
     side is before sharpening, and the photo on the right-hand side is
@@ -100,4 +136,4 @@ algorithms.
     function, wrinkles and eyebrows are more obvious on the right-hand
     side photo.
 
-![](img/before_sharpen.png) ![](img/after_sharpen.png)
+
