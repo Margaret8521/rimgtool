@@ -1,18 +1,18 @@
-#' Return a shrinked image of desired size by
+#' Return a croped image of desired size by
 #' removing pixels from borders of the image
 #'
 #' @param image input image as a array
 #' @param width integer desired width for new image
 #' @param height integer desired height for new image
 #'
-#' @return array for shrinked image
+#' @return array for croped image
 #' @export
 #'
 #' @examples
 #' old_img <- array(1:24, dim = c(10, 10, 3))
-#' shrinked_img <- shrink(old_img, 5, 5)
+#' croped_img <- crop(old_img, 5, 5)
 
-shrink <- function(image, width, height){
+crop <- function(image, width, height){
 
   # checking if input is valid
   if (is.array(image) == FALSE){
@@ -50,8 +50,8 @@ shrink <- function(image, width, height){
     right_col <- as.integer(dim(image)[2] - left_col + 1)
   }
 
-  shrinked <- image[(top_row + 1):bottom_row, (left_col + 1):right_col, ]
+  croped <- image[(top_row + 1):bottom_row, (left_col + 1):right_col, ]
 
-  return(shrinked)
+  return(croped)
 
 }

@@ -1,0 +1,36 @@
+Package: rimgtool
+Title: Image processing
+Version: 0.0.0.9000
+Authors@R: 
+   c(person(given = "Frank",
+           family = "Lu",
+           role = c("aut", "cre"),
+           email = "franklu@live.ca",
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+    person(given = "Rita",
+           family = "Ni",
+           role = c("aut"),
+           email = "niruidan@gmail.com"),
+    person(given = "Margaret",
+           family = "Zhao",
+           role = c("aut"),
+           email = "margaretzhao@yahoo.com"))
+Description: The package can compresses, sharpen, or crop images.
+    The compress function can reduces the byte size of image, 
+    the crop function reduce image size by removing border pixels, 
+    the sharpen function by applying special filters.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Suggests: testthat (>= 2.1.0), covr, knitr, rmarkdown
+URL: https://github.com/UBC-MDS/rimgtool
+BugReports: https://github.com/UBC-MDS/rimgtool/issues
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2020-03-26 02:01:40 UTC; rn
+Author: Frank Lu [aut, cre] (<https://orcid.org/YOUR-ORCID-ID>),
+  Rita Ni [aut],
+  Margaret Zhao [aut]
+Maintainer: Frank Lu <franklu@live.ca>
+Built: R 3.6.1; ; 2020-03-26 02:01:42 UTC; unix

@@ -15,9 +15,9 @@ Authors@R:
            family = "Zhao",
            role = c("aut"),
            email = "margaretzhao@yahoo.com"))
-Description: The package can compresses, sharpen, or shrink images.
+Description: The package can compresses, sharpen, or crop images.
     The compress function can reduces the byte size of image, 
-    the shrink function reduce image size by removing border pixels, 
+    the crop function reduce image size by removing border pixels, 
     the sharpen function by applying special filters.
 License: MIT + file LICENSE
 Encoding: UTF-8
