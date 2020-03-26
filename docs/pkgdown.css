@@ -33,7 +33,7 @@ footer {
   border-top: 1px solid #e5e5e5;
   color: #666;
   display: flex;
-  flex-shrink: 0;
+  flex-crop: 0;
 }
 footer p {
   margin-bottom: 0;

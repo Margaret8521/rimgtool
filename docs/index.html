@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Image processing">
-<meta property="og:description" content="The package can compresses, sharpen, or shrink images.
+<meta property="og:description" content="The package can compresses, sharpen, or crop images.
     The compress function can reduces the byte size of image, 
-    the shrink function reduce image size by removing border pixels, 
+    the crop function reduce image size by removing border pixels, 
     the sharpen function by applying special filters.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -92,7 +92,7 @@
 <div id="package-overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#package-overview" class="anchor"></a>Package Overview</h2>
-<p><code>rimgtool</code> is a R package that is intended to allow users to compress, sharpen and shrink an input image. Our package only allows the input image to be a 3D numpy array and output the manipulated image as a 3D numpy array. It contains three functions: <code><a href="reference/compress.html">compress()</a></code>, <code><a href="reference/sharpen.html">sharpen()</a></code>, and <code><a href="reference/shrink.html">shrink()</a></code>.</p>
+<p><code>rimgtool</code> is a R package that is intended to allow users to compress, sharpen and crop an input image. Our package only allows the input image to be a 3D numpy array and output the manipulated image as a 3D numpy array. It contains three functions: <code><a href="reference/compress.html">compress()</a></code>, <code><a href="reference/sharpen.html">sharpen()</a></code>, and <code><a href="reference/crop.html">crop()</a></code>.</p>
 </div>
 <div id="feature-description" class="section level2">
 <h2 class="hasAnchor">
@@ -111,9 +111,9 @@
 </ul>
 </li>
 <li>
-<code>shrink</code>:
+<code>crop</code>:
 <ul>
-<li>A function that removes border pixels for image shrinking until the desired width and height are reached.</li>
+<li>A function that removes border pixels for image croping until the desired width and height are reached.</li>
 </ul>
 </li>
 </ul>
@@ -137,7 +137,7 @@
 <div id="related-packages" class="section level2">
 <h2 class="hasAnchor">
 <a href="#related-packages" class="anchor"></a>Related Packages</h2>
-<p>There are a few existing R packages that perform image manipulation such as <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html">magick</a> and <a href="https://dahtah.github.io/imager/imager.html#resizing-rotation-etc.">imager</a>, which could be used for simplifying high-quantity images. However, these packages are usually very comprehensive and provide many functions to process the image in different ways. There are very few smaller packages available on Github to perform simpler image processing tasks like image shrinking such as <a href="https://github.com/vgorte/SC-Package-R">this package</a> using seam carving mechanism. Our implementation of image processing is a less sophisticated version of the existing image processing tools, we focus specifically on image compression, shrinking, and sharpening using simpler and easy to understand algorithms.</p>
+<p>There are a few existing R packages that perform image manipulation such as <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html">magick</a> and <a href="https://dahtah.github.io/imager/imager.html#resizing-rotation-etc.">imager</a>, which could be used for simplifying high-quantity images. However, these packages are usually very comprehensive and provide many functions to process the image in different ways. There are very few smaller packages available on Github to perform simpler image processing tasks like image croping such as <a href="https://github.com/vgorte/SC-Package-R">this package</a> using seam carving mechanism. Our implementation of image processing is a less sophisticated version of the existing image processing tools, we focus specifically on image compression, croping, and sharpening using simpler and easy to understand algorithms.</p>
 </div>
 <div id="dependencies" class="section level2">
 <h2 class="hasAnchor">
@@ -169,8 +169,8 @@
 <td><code>rimgtool.sharpen(image)</code></td>
 </tr>
 <tr class="odd">
-<td>Shrink an image to desired width and height</td>
-<td><code>rimgtool.shrink(image, 20, 20)</code></td>
+<td>crop an image to desired width and height</td>
+<td><code>rimgtool.crop(image, 20, 20)</code></td>
 </tr>
 </tbody>
 </table>

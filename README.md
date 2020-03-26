@@ -26,8 +26,8 @@ The goal of `rimgtool` is to perform image processing in R.
 
 ## Package Overview
 
-`rimgtool` is a R package that is intended to allow users to compress, sharpen and shrink an input image.
-Our package only allows the input image to be a 3D numpy array and output the manipulated image as a 3D numpy array. It contains three functions: `compress()`, `sharpen()`, and `shrink()`.
+`rimgtool` is a R package that is intended to allow users to compress, sharpen and crop an input image.
+Our package only allows the input image to be a 3D numpy array and output the manipulated image as a 3D numpy array. It contains three functions: `compress()`, `sharpen()`, and `crop()`.
 
 
 ## Feature Description
@@ -40,8 +40,8 @@ Our package only allows the input image to be a 3D numpy array and output the ma
 - `sharpen`:
   - This function enhances the edges in the image and returns a sharper-looking image.  At this moment, this function is restricted to gray-scale images only
 
-- `shrink`:
-  - A function that removes border pixels for image shrinking until the desired width and height are reached.
+- `crop`:
+  - A function that removes border pixels for image croping until the desired width and height are reached.
 
 
 
@@ -57,7 +57,7 @@ devtools::install_github("UBC-MDS/rimgtool")
 
 ## Related Packages
 
-  There are a few existing R packages that perform image manipulation such as [magick](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) and [imager](https://dahtah.github.io/imager/imager.html#resizing-rotation-etc.), which could be used for simplifying high-quantity images. However, these packages are usually very comprehensive and provide many functions to process the image in different ways. There are very few smaller packages available on Github to perform simpler image processing tasks like image shrinking such as [this package](https://github.com/vgorte/SC-Package-R) using seam carving mechanism. Our implementation of image processing is a less sophisticated version of the existing image processing tools, we  focus specifically on image compression, shrinking, and sharpening using simpler and easy to understand algorithms.
+  There are a few existing R packages that perform image manipulation such as [magick](https://cran.r-project.org/web/packages/magick/vignettes/intro.html) and [imager](https://dahtah.github.io/imager/imager.html#resizing-rotation-etc.), which could be used for simplifying high-quantity images. However, these packages are usually very comprehensive and provide many functions to process the image in different ways. There are very few smaller packages available on Github to perform simpler image processing tasks like image croping such as [this package](https://github.com/vgorte/SC-Package-R) using seam carving mechanism. Our implementation of image processing is a less sophisticated version of the existing image processing tools, we  focus specifically on image compression, croping, and sharpening using simpler and easy to understand algorithms.
 
 
 ## Dependencies
@@ -73,7 +73,7 @@ devtools::install_github("UBC-MDS/rimgtool")
 |---------|---------------------|
 |Compress an image to 3 bits per channel |  `rimgtool.compress(image, 3)` |
 |Sharpen an image by detecting and enhancing the edges|  `rimgtool.sharpen(image)`|
-|Shrink an image to desired width and height  |  `rimgtool.shrink(image, 20, 20)`|
+|crop an image to desired width and height  |  `rimgtool.crop(image, 20, 20)`|
 
 
 ## Usage scenario

@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 This package provides three functions:
 - sharpen
 - compress
-- shrink
+- crop
 
 As the name suggests, we aim to providing some tools for easy image processing.  To use this package, follow the installation guide on README and install this package.  Then, import the package.
 

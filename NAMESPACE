@@ -2,5 +2,5 @@
 
 export(compress)
 export(sharpen)
-export(shrink)
+export(crop)
 importFrom(stats,kmeans)
